@@ -48,7 +48,7 @@ class ItemsController extends LfmController
                     $path = $this->lfm->dir($this->helper->getRootFolder($type));
 
                     return (object) [
-                        'name' => trans('laravel-filemanager::lfm.title-' . $type),
+                        'name' => trans('lfm.title-' . $type),
                         'url' => $path->path('working_dir'),
                         'children' => $path->folders(),
                         'has_next' => ! ($type == end($folder_types)),

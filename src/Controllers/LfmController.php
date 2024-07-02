@@ -49,7 +49,7 @@ class LfmController extends Controller
         $arr_errors = [];
 
         if (! extension_loaded('gd') && ! extension_loaded('imagick')) {
-            array_push($arr_errors, trans('laravel-filemanager::lfm.message-extension_not_found'));
+            array_push($arr_errors, trans('lfm.message-extension_not_found'));
         }
 
         if (! extension_loaded('exif')) {
@@ -94,6 +94,6 @@ class LfmController extends Controller
     // TODO: remove this after refactoring RenameController and DeleteController
     protected function error($error_type, $variables = [])
     {
-        return trans(Lfm::PACKAGE_NAME . '::lfm.error-' . $error_type, $variables);
+        return trans('lfm.error-' . $error_type, $variables);
     }
 }
